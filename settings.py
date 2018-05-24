@@ -10,7 +10,7 @@ import otree.settings
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-	'real_world_currency_per_point': 1.00,
+	'real_world_currency_per_point': 0.25,
 	'participation_fee': 0.00,
 	'doc': "",
 }
@@ -20,6 +20,8 @@ SESSION_CONFIGS = [
 		'name': 'trust_game',
 		'display_name': "Trust Game",
 		'num_demo_participants': 2,
+		'payment': "money",  # use money or sweets
+		'exchange_rate_sweets': 0, #points equal 1 Schokobon
 		'app_sequence': ['trust_game'],
 	},
 ]
@@ -33,7 +35,19 @@ LANGUAGE_CODE = 'en'
 REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = True
 
-ROOMS = []
+ROOMS = [  
+
+    {
+
+        'name': 'awi_lab',
+
+        'display_name': 'AWI Experimentallabor',
+
+        'participant_label_file': 'participant_labels.txt'
+
+    }
+
+]
 
 
 # AUTH_LEVEL:

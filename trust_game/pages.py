@@ -66,6 +66,7 @@ class ResultsWaitPage(WaitPage):
 		self.group.after_decision_B()
 		self.group.get_correct_roles()
 		self.group.get_payoffs()
+		self.group.before_results()
 
 
 class Results(Page):

@@ -19,7 +19,12 @@
 <ul>
 <li>This experiment consists of two parts.&nbsp;</li>
 <li>You have the opportunity to earn points in the experiment. How much points you earn depends on your own decisions as well as the decisions of the other participants.</li>
-<li>All payments are displayed in points in the experiment and will be converted into Euro as follows: NOCH AUSFUELLEN</li>
+    {% if player.payment == "money" %}
+<li>All payments are displayed in points in the experiment and will be converted into Euro as follows: 1 point = {{player.exchange_rate}} Euro</li>
+	{% elif player.payment == "sweets" %}
+<li>All payments are displayed in points in the experiment and will be converted into Euro as follows: {{player.exchange_rate_sweets }} points = 1 Schokobon.</li>
+	{% endif %}
+
 <li>You receive your payoff as soon as all participants finished the experiment. At the end of the experiment, each participant will be called one by one and receive his/her personal payment in private.</li>
 <li>In case that you have any question during the experiment, please raise your hand. The experimenter will attend your question in private.</li>
 </ul>

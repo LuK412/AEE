@@ -22,11 +22,15 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
+
 	
 	def creating_session(self):
 		self.group_randomly()
 		random_number = random.randint(1,2)
 		for player in self.get_players():
+			player.exchange_rate = self.session.config["real_world_currency_per_point"]
+			player.payment = self.session.config["payment"]
+			player.exchange_rate_sweets = self.session.config["exchange_rate_sweets"]
 			player.random_number = random_number
 
 
@@ -95,6 +99,9 @@ class Group(BaseGroup):
 		for player in self.get_players():
 			player.get_values_B()
 
+	def before_results(self):
+		for player in self.get_players():
+			player.det_final_payoff()
 
 
 class Player(BasePlayer):
@@ -175,3 +182,19 @@ class Player(BasePlayer):
 		verbose_name="5. We should employ more public video surveillance.",
 		doc="Turns True if the participant agrees."
 		)
+
+	exchange_rate = models.FloatField()
+
+	exchange_rate_sweets = models.PositiveIntegerField()
+
+	payment = models.CharField(
+		doc="indicates whether payment is in money or in sweets."
+		)
+
+	final_payoff = models.FloatField()
+
+	def det_final_payoff(self):
+		if self.payment == "money":
+			self.final_payoff = float(self.payoff) * self.exchange_rate
+		elif self.payment == "sweets":
+			self.final_payoff = float(self.payoff) / self.exchange_rate_sweets

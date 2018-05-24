@@ -9,14 +9,14 @@
 
     {% if player.role == "A" %}
         <p>
-        	The computer determined that you are person A.
-            You sent Participant B {{ group.sent_amount }}.
+        	The computer randomly determined that you are person A.
+            You sent Participant B {{ group.sent_amount }} and the amount was tripled.
             Participant B returned {{ group.sent_back_amount }}.
         </p>
     {% else %}
         <p>
-        	The computer determined that you are person B.
-            Participant A sent you {{ group.sent_amount }}.
+        	The computer randomly determined that you are person B.
+            Participant A sent you {{ group.sent_amount }} and the amount was tripled.
             You returned {{ group.sent_back_amount }}.
         </p>
 
@@ -25,5 +25,13 @@
     <p>
     Therefore, your total payoff is {{ player.payoff }}.
     </p>
+
+    {% if player.payment == "money" %}
+    Hence, you will receive {{ player.final_payoff }} Euro.
+    {% elif player.payment == "sweets" %}
+    Hence, you will receive {{ player.final_payoff }} Schokobons.
+    {% endif %}
+    
+
 
 {% endblock %}
