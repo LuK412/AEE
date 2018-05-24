@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+    {% if player.role == "A" %}
+        <p>
+        	The computer determined that you are person A.
+            You sent Participant B {{ group.sent_amount }}.
+            Participant B returned {{ group.sent_back_amount }}.
+        </p>
+    {% else %}
+        <p>
+        	The computer determined that you are person B.
+            Participant A sent you {{ group.sent_amount }}.
+            You returned {{ group.sent_back_amount }}.
+        </p>
+
+    {% endif %}
+
+    <p>
+    Therefore, your total payoff is {{ player.payoff }}.
+    </p>
+
+{% endblock %}

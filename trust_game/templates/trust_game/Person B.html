@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block title %}
+    Trust Game: Your Choice
+{% endblock %}
+
+{% block content %}
+
+    {% include 'trust_game/Instructions.html' %}
+
+    <p>
+        You are Participant B. Participant A sent you {{player.sent_by_other}}
+        and you received {{tripled_amount}}.
+    </p>
+
+    {% formfield player.sent_back_amount_players label="How much do you want to send back?" %}
+
+    {% next_button %}
+
+{% endblock %}

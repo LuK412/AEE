@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block title %}
+    Person B
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Now, you take on the role of person B. Your group member sent you {{player.sent_by_other}} as Person A. Hence, you received {{tripled_amount}}.
+    </p>
+
+    {% formfield player.sent_back_amount_players label="How much do you want to send back?" %}
+
+    {% include 'trust_game/Instructions.html' %}
+
+    {% next_button %}
+
+{% endblock %}
