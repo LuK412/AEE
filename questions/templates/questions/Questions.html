@@ -2,23 +2,30 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Part I
+    Fragebogen
 {% endblock %}
 
 {% block content %}
 
-<p> You will now start with Part I of the experiment </p>
-<p> Please indicate for the following 5 statements whether you agree or disagree. </p>
+<p> Vielen Dank für deine Teilnahme an dieser Umfrage. </p>
+<p> Bitte gib an, ob du den folgenden Aussagen zustimmst oder nicht. </p>
+<p> Die Daten sind selbstverständlich anonymisiert und können nicht mit deiner Person in Verbing gebracht werden.</p>
 
-	<p> {% formfield player.question_1 %} </p>
+	<p> {% formfield player.frauen %} </p>
 
-	<p> {% formfield player.question_2 %} </p>
+	<p> {% formfield player.atom %} </p>
 
-	<p> {% formfield player.question_3 %} </p>
+	<p> {% formfield player.grundek %} </p>
 
-	<p> {% formfield player.question_4 %} </p>
+	<p> {% formfield player.impfen %} </p>
 
-	<p> {% formfield player.question_5 %} </p>
+	<p> {% formfield player.video %} </p>
+
+	<p> {% formfield player.ruestung %} </p>
+
+	<p> {% formfield player.tempo %} </p>
+
+	<p> {% formfield player.aktivesh %} </p>
 
     {% next_button %}
 

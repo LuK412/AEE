@@ -27,52 +27,82 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
 	
-	question_1 = models.BooleanField(
+	frauen = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="1. We need mandatory quotas for women in leadership positions.",
+		verbose_name="1. Wir brauchen eine Frauenquote für Führungspositionen.",
 		doc="Turns True if the participant agrees."
 		)
 
-	question_2 = models.BooleanField(
+	atom = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="2. Every country should exit from nuclear power in the long run.",
+		verbose_name="2. Langfristig sollte jedes Land aus der Atomkraft aussteigen.",
 		doc="Turns True if the participant agrees."
 		)
 
-	question_3 = models.BooleanField(
+	grundek = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="3. We should all have an unconditional basic income.",
+		verbose_name="3. In Deutschland sollte es ein bedingungsloses Grundeinkommen geben.",
 		doc="Turns True if the participant agrees."
 		)
 
-	question_4 = models.BooleanField(
+	impfen = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="4. Vaccinations should be mandatory for children.",
+		verbose_name="4. Für Kinder sollte eine Impfpflicht bestehen.",
 		doc="Turns True if the participant agrees."
 		)
 
-	question_5 = models.BooleanField(
+	video = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="5. We should employ more public video surveillance.",
+		verbose_name="5. Zur Terrorismusbekämpfung sollte es mehr Videoüberwachung im öffentlichen Raum geben.",
+		doc="Turns True if the participant agrees."
+		)
+
+	ruestung = models.BooleanField(
+		choices=(
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
+			),
+		widget=widgets.RadioSelectHorizontal(),
+		verbose_name="6. Rüstungsexporte sollten ohne Ausnahmen verboten werden.",
+		doc="Turns True if the participant agrees."
+		)
+
+	tempo = models.BooleanField(
+		choices=(
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
+			),
+		widget=widgets.RadioSelectHorizontal(),
+		verbose_name="7. Auf deutschen Autobahnen sollte ein generelles Tempolimit eingeführt werden.",
+		doc="Turns True if the participant agrees."
+		)
+
+	aktivesh = models.BooleanField(
+		choices=(
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
+			),
+		widget=widgets.RadioSelectHorizontal(),
+		verbose_name="8. Aktive Sterbehilfe sollte in Deutschland erlaubt sein.",
 		doc="Turns True if the participant agrees."
 		)
