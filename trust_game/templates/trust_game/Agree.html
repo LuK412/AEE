@@ -2,25 +2,26 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Part II
+    Teil 2
 {% endblock %}
 
 {% block content %}
 
-	<p> You start now with the second part of the experiment. </p>
-	<p> For this part, you have been randomly matched with one other participant in this room. </p>
+	<p> Sie beginnen nun mit Teil 2 des Experiments.</p>
+	<p> Für diesen Teil des Experiments wurde Ihnen zufällig ein anderer Teilnehmer in diesem Raum zugeordnet.</p>
 
     {% include 'trust_game/Instructions.html' %} <br>
 
-<p>The second part of the experiment will be organized as follows:</p>
+<p>Der zweite Teil des Experiments wird wie folgt ablaufen:</p>
 <ol>
-<li>On the next page, you will learn by how much you agreed with your group member regarding the questions in part I.</li>
-<li>Both you and your group member will first make their choices as Person A.</li>
-<li>You will be informed about the amount the other player sent you as Person A.</li>
-<li>Both players will take the decision of how much to send back as Person B.</li>
-<li>In the end of the experiment the computer will determine randomly and with equal probabilities the roles which will be payoff relevant.</li>
+<li>Auf der nächsten Seite werden Sie erfahren inwieweit Sie mit dem Ihnen zugeordenten Teilnehmer in den Fragen aus Teil 1 übereingestimmt haben.</li>
+<li>Sie beide werden zunächst eine Entscheidung als Person A treffen.</li>
+<li>Als nächstes werden Sie über den Betrag informiert, den der andere Teilnehmer Ihnen als Person A geschickt hat.</li>
+<li>Dann nehmen Sie beide die Rolle von Person B an und entscheiden wie viel Sie in dieser Rolle an Person A zurückschicken würden.</li>
+<li>Am Ende des Experiments wird der Computer zufällig und mit gleicher Wahrscheinlichkeit bestimmen, welche Rolle für Sie auszahlungsrelevant wird.</li>
 </ol>
 
-    {% next_button %}
+    <div align="right">{% next_button %}</div>
+
 
 {% endblock %}

@@ -2,34 +2,34 @@
 {% load static otree %}
 
 {% block title %}
-    Results
+    Ergebnis
 {% endblock %}
 
 {% block content %}
 
     {% if player.role == "A" %}
         <p>
-        	The computer randomly determined that you are person A.
-            You sent Participant B {{ group.sent_amount }} and the amount was tripled.
-            Participant B returned {{ group.sent_back_amount }}.
+        	Der Computer hat zufällig bestimmt, dass für Sie die Rolle von Person A auszahlungsrelevant wird.
+            Sie haben Person B {{ group.sent_amount }} geschickt und die Punkte wurden verdreifacht.
+            Person B hat Ihnen {{ group.sent_back_amount }} zurückgeschickt.
         </p>
     {% else %}
         <p>
-        	The computer randomly determined that you are person B.
-            Participant A sent you {{ group.sent_amount }} and the amount was tripled.
-            You returned {{ group.sent_back_amount }}.
+        	Der Computer hat zufällig bestimmt, dass für Sie die Rolle von Person B auszahlungsrelevant wird.
+            Person A hat Ihnen {{ group.sent_amount }} geschickt und die Punkte wurden verdreifacht.
+            Sie haben {{ group.sent_back_amount }} an Person A zurückgeschickt.
         </p>
 
     {% endif %}
 
     <p>
-    Therefore, your total payoff is {{ player.payoff }}.
+    Ihre Gesamtauszahlunge beträgt daher <strong>{{ player.payoff }}</strong>.
     </p>
 
     {% if player.payment == "money" %}
-    Hence, you will receive {{ player.final_payoff }} Euro.
+    Sie werden somit <strong>{{ player.final_payoff }} Euro</strong> erhalten.
     {% elif player.payment == "sweets" %}
-    Hence, you will receive {{ player.final_payoff }} Schokobons.
+    Sie werden somit <strong>{{ player.final_payoff }} Schokobons</strong> erhalten.
     {% endif %}
     
 

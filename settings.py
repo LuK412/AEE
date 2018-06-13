@@ -10,7 +10,7 @@ import otree.settings
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-	'real_world_currency_per_point': 0.25,
+	'real_world_currency_per_point': 0.10,
 	'participation_fee': 0.00,
 	'doc': "",
 }
@@ -19,7 +19,7 @@ SESSION_CONFIGS = [
 	{
 		'name': 'trust_game',
 		'display_name': "Trust Game",
-		'num_demo_participants': 2,
+		'num_demo_participants': 20,
 		'payment': "money",  # use money or sweets
 		'exchange_rate_sweets': 0, #points equal 1 Schokobon
 		'app_sequence': ['trust_game'],
@@ -35,7 +35,7 @@ SESSION_CONFIGS = [
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'de'
 
 # e.g. EUR, GBP, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'EUR'

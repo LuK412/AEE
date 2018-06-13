@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+
+<ul>
+<li>This experiment consists of two parts.&nbsp;</li>
+<li>At the end of the experiment the computer will randomly choose <strong>one round out of one part of the experiment.</strong> You receive the payoff that results from the decisions in this round. Each round is chosen with the same probability.</li>
+</ul>
+
+    {% next_button %}
+
+{% endblock %}

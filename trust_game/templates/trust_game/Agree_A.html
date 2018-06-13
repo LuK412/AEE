@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Part II
+{% endblock %}
+
+{% block content %}
+
+	<p> You start now with the second part of the experiment. </p>
+	<p> For this part, you have been randomly matched with one other participant in this room. </p>
+
+    {% include 'trust_game/Instructions.html' %} <br>
+
+<p>The second part of the experiment will be organized as follows:</p>
+<ol>
+<li>On the next page, you will learn by how much you agreed with your group member regarding the questions in part I.</li>
+<li>Both you and your group member will first make their choices as Person A.</li>
+<li>You will be informed about the amount the other player sent you as Person A.</li>
+<li>Both players will take the decision of how much to send back as Person B.</li>
+<li>In the end of the experiment the computer will determine randomly and with equal probabilities the roles which will be payoff relevant.</li>
+</ol>
+
+    {% next_button %}
+
+{% endblock %}

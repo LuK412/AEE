@@ -2,13 +2,13 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Teil I
+    Part I
 {% endblock %}
 
 {% block content %}
 
-<p> Sie beginnen nun mit Teil 1 des Experiments. </p>
-<p> Bitte geben Sie für die folgenden Aussagen an, ob Sie zustimmen oder nicht.</p>
+<p> You will now start with Part I of the experiment </p>
+<p> Please indicate for the following 5 statements whether you agree or disagree. </p>
 
 	<p> {% formfield player.question_1 %} </p>
 
@@ -18,6 +18,8 @@
 
 	<p> {% formfield player.question_4 %} </p>
 
-    <div align="right">{% next_button %}</div>
+	<p> {% formfield player.question_5 %} </p>
+
+    {% next_button %}
 
 {% endblock %}

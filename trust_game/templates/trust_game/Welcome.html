@@ -2,31 +2,31 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Welcome
+    Herzlich Willkommen
 {% endblock %}
 
 {% block content %}
 
-    <p><strong>Dear Participant,</strong></p>
-    <p>Thank you very much for participating in this experiment. Please read the following instructions carefully.</p>
-<p><strong>General rules: </strong></p>
+    <p><strong>Liebe Studienteilnehmerin, </strong><br /> <strong>Lieber Studienteilnehmer,</strong></p>
+    <p>Vielen Dank für Ihre Teilnahme an diesem Experiment. Bitte lesen Sie die folgenden Instruktionen sorgfältig durch.</p>
+<p><strong>Allgemeine Regeln: </strong></p>
 <ul>
-<li>This experiment takes approximately 15 minutes. Please remain seated during the entire time.</li>
-<li>Please be quiet during the experiment and don&rsquo;t talk to other participants.</li>
+<li>Das Experiment wird ungefähr 15 Minuten dauern. Bitte bleiben Sie während dieser Zeit an Ihrem Platz sitzen.</li>
+<li>Verhalten Sie sich während des gesamten Experiments ruhig und kommunizieren Sie nicht mit anderen Teilnehmern.</li>
 </ul>
 
-<p><strong>Procedures and Payoff: </strong></p>
+<p><strong>Ablauf und Auszahlung: </strong></p>
 <ul>
-<li>This experiment consists of two parts.&nbsp;</li>
-<li>You have the opportunity to earn points in the experiment. How much points you earn depends on your own decisions as well as the decisions of the other participants.</li>
+<li>Dieses Experiment besteht aus zwei Teilen.&nbsp;</li>
+<li>Sie haben die Möglichkeit während des Experiments Punkte zu verdienen. Wie viele Punkte Sie verdienen werden hängt von Ihren eigenen Entscheidungen sowie den Entscheidungen anderer Teilnehmer in diesem Raum ab.</li>
     {% if player.payment == "money" %}
-<li>All payments are displayed in points in the experiment and will be converted into Euro as follows: 1 point = {{player.exchange_rate}} Euro</li>
+<li>Alle Auszahlungen in diesem Experiment sind in Punkten angegeben und werden wie folgt in Euro umgerechnet: 1 Punkt = {{player.exchange_rate}} Euro</li>
 	{% elif player.payment == "sweets" %}
-<li>All payments are displayed in points in the experiment and will be converted into Euro as follows: {{player.exchange_rate_sweets }} points = 1 Schokobon.</li>
+<li>Alle Auszahlungen in diesem Experiment sind in Punkten angegeben und werden wie folgt in Schokobons umgerechnet: {{player.exchange_rate_sweets }} Punkte = 1 Schokobon.</li>
 	{% endif %}
 
-<li>You receive your payoff as soon as all participants finished the experiment. At the end of the experiment, each participant will be called one by one and receive his/her personal payment in private.</li>
-<li>In case that you have any question during the experiment, please raise your hand. The experimenter will attend your question in private.</li>
+<li>Sie erhalten Ihre Auszahlung sobald alle Teilnehmer das Experiment beendet haben. Sie werden dann anhand Ihrer Sitzplatznummer zur Auszahlung nach vorne gerufen und erhalten dort Ihre Auszahlung.</li>
+<li>Sollten Sie während des Experiments Fragen haben, heben Sie bitte leise die Hand und warten Sie bis ein Experimenator zu Ihrem Platz kommt um Ihnen die Frage zu beantworten.</li>
 </ul>
 
     <div align="right">{% next_button %}</div>

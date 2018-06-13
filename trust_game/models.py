@@ -40,7 +40,7 @@ class Group(BaseGroup):
 	agree_q2 = models.IntegerField()
 	agree_q3 = models.IntegerField()
 	agree_q4 = models.IntegerField()
-	agree_q5 = models.IntegerField()
+#	agree_q5 = models.IntegerField()
 
 
 	score = models.PositiveIntegerField()
@@ -72,12 +72,12 @@ class Group(BaseGroup):
 			self.agree_q4 = 1
 		elif p1.question_4 != p2.question_4:
 			self.agree_q4 = 0
-		if p1.question_5 == p2.question_5:
-			self.agree_q5 = 1
-		elif p1.question_5 != p2.question_5:
-			self.agree_q5 = 0
+#		if p1.question_5 == p2.question_5:
+#			self.agree_q5 = 1
+#		elif p1.question_5 != p2.question_5:
+#			self.agree_q5 = 0
 
-		self.score = (self.agree_q1 + self.agree_q2 + self.agree_q3 + self.agree_q4 + self.agree_q5)/5 * 100
+		self.score = self.agree_q1 + self.agree_q2 + self.agree_q3 + self.agree_q4
 
 	def get_correct_roles(self):
 		p1 = self.get_player_by_role("A")
@@ -135,53 +135,53 @@ class Player(BasePlayer):
 
 	question_1 = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="1. We need mandatory quotas for women in leadership positions.",
+		verbose_name="1. Wir brauchen eine Frauenquote für Führungspositionen.",
 		doc="Turns True if the participant agrees."
 		)
 
 	question_2 = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="2. Every country should exit from nuclear power in the long run.",
+		verbose_name="2. In Deutschland sollte es ein bedingungsloses Grundeinkommen geben.",
 		doc="Turns True if the participant agrees."
 		)
 
 	question_3 = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="3. We should all have an unconditional basic income.",
+		verbose_name="3. Zur Terrorismusbekämpfung sollte es mehr Videoüberwachung im öffentlichen Raum geben.",
 		doc="Turns True if the participant agrees."
 		)
 
 	question_4 = models.BooleanField(
 		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
+			(True, "Ich stimme zu"),
+			(False, "Ich stimme nicht zu"),
 			),
 		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="4. Vaccinations should be mandatory for children.",
+		verbose_name="4. Rüstungsexporte sollten ohne Ausnahmen verboten werden.",
 		doc="Turns True if the participant agrees."
 		)
 
-	question_5 = models.BooleanField(
-		choices=(
-			(True, "I agree"),
-			(False, "I don't agree"),
-			),
-		widget=widgets.RadioSelectHorizontal(),
-		verbose_name="5. We should employ more public video surveillance.",
-		doc="Turns True if the participant agrees."
-		)
+#	question_5 = models.BooleanField(
+#		choices=(
+#			(True, "Ich stimme zu"),
+#			(False, "Ich stimme nicht zu"),
+#			),
+#		widget=widgets.RadioSelectHorizontal(),
+#		verbose_name="5. We should employ more public video surveillance.",
+#		doc="Turns True if the participant agrees."
+#		)
 
 	exchange_rate = models.FloatField()
 
@@ -191,7 +191,7 @@ class Player(BasePlayer):
 		doc="indicates whether payment is in money or in sweets."
 		)
 
-	final_payoff = models.FloatField()
+	final_payoff = models.DecimalField(max_digits=5, decimal_places=2)
 
 	def det_final_payoff(self):
 		if self.payment == "money":

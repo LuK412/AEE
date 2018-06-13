@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block title %}
+    Person A
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    For now you take on the role of Person A. You have {{Constants.endowment}}.
+    </p>
+
+    <p>
+    <strong>You and your group mate agreed in {{ group.score }}% of the questions.</strong>
+    </p>
+
+    {% formfield player.sent_amount_players label="How much do you want to send to participant B?" %}
+
+    {% include 'trust_game/Instructions.html' %}
+
+    {% next_button %}
+
+{% endblock %}

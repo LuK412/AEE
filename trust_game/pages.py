@@ -11,7 +11,7 @@ class Welcome(Page):
 class Questions(Page):
 
 	form_model = "player"
-	form_fields = ["question_1", "question_2", "question_3", "question_4", "question_5", ]
+	form_fields = ["question_1", "question_2", "question_3", "question_4"]
 
 class WaitForGroup(WaitPage):
 

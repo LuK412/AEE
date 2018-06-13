@@ -8,17 +8,18 @@
 {% block content %}
 
     <p>
-    For now you take on the role of Person A. You have {{Constants.endowment}}.
+    Sie nehmen nun die Rolle von Person A ein. Sie besitzen {{Constants.endowment}}.
     </p>
 
     <p>
-    <strong>You and your group mate agreed in {{ group.score }}% of the questions.</strong>
+    <strong>Sie und der andere Teilnehmer haben in {{ group.score }} der 4 Fragen aus Teil 1 übereingestimmt.</strong>
     </p>
 
-    {% formfield player.sent_amount_players label="How much do you want to send to participant B?" %}
+    {% formfield player.sent_amount_players label="Wie viel wollen Sie an Spieler B senden?" %}
 
     {% include 'trust_game/Instructions.html' %}
 
-    {% next_button %}
+    <div align="right">{% next_button %}</div>
+
 
 {% endblock %}

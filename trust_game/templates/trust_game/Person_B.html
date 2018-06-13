@@ -8,13 +8,14 @@
 {% block content %}
 
     <p>
-        Now, you take on the role of person B. Your group member sent you {{player.sent_by_other}} as Person A. Hence, you received {{tripled_amount}}.
+        Nun nehmen Sie die Rolle von Person B ein. Der Ihnen zugeordnete Teilnehmer hat Ihnen {{player.sent_by_other}} als Person A gesendet. Somit erhalten Sie {{tripled_amount}}.
     </p>
 
-    {% formfield player.sent_back_amount_players label="How much do you want to send back?" %}
+    {% formfield player.sent_back_amount_players label="Wie viel wollen Sie davon zurückschicken?" %}
 
     {% include 'trust_game/Instructions.html' %}
 
-    {% next_button %}
+    <div align="right">{% next_button %}</div>
+
 
 {% endblock %}
