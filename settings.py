@@ -10,7 +10,7 @@ import otree.settings
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-	'real_world_currency_per_point': 0.10,
+	'real_world_currency_per_point': 0.20,
 	'participation_fee': 0.00,
 	'doc': "",
 }
