@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Fragebogen
+{% endblock %}
+
+{% block content %}
+Am Ende des Experiments möchten wir Sie noch bitten, diesen kurzen Fragebogen auszufüllen. </p>
+
+{% formfield player.eco_buy %}
+{% formfield player.eco_belief %}
+{% if player.Role == "treatment" %} {% formfield player.eco_belief_experiment %} {% endif %}
+    {% next_button %}
+
+
+
+
+{% endblock %}

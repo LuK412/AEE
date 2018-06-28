@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Entscheidung 1
+{% endblock %}
+
+{% block content %}
+Bei der ersten Entscheidung müssen Sie sich für ein Produkt entscheiden, dass Sie kaufen möchten. Die Produkte unterscheiden sich nur in der Produktionsweise. Bei beiden Produkten handelt es sich um Schokolade. Eins der Produkte wurde konventionell herrgestellt, das andere erfüllt die Bio- und Fairtrade-Standards. </p>
+Die Bio-Schokolade kostet {{Constants.eco_price}}€, die konventionelle Schokolade kostet {{Constants.conv_price}}€.
+{% if player.Role == "treatment" %} <p>&nbsp;</p><p><strong>Beachten Sie</strong>: Entscheiden Sie sich f&uuml;r die Bio-Schokolade, bekommen Sie trotz dieser Entscheidung mit einer gewissen, Ihnen unbekannten Wahrscheinlichkeit <strong>KEINE</strong> Bio-Schokolade sondern die konventionell produzierte Schokolade!</p> {% endif %}</p>
+
+{% formfield player.chocolate_choice %}
+    {% next_button %}
+
+{% endblock %}

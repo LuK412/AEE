@@ -19,17 +19,23 @@ SESSION_CONFIGS = [
 	{
 		'name': 'trust_game',
 		'display_name': "Trust Game",
-		'num_demo_participants': 20,
+		'num_demo_participants': 2,
 		'payment': "money",  # use money or sweets
-		'exchange_rate_sweets': 0, #points equal 1 Schokobon
-		'app_sequence': ['trust_game'],
+		'exchange_rate_sweets': 0,
+		'app_sequence': ['trust_game', 'Lukas', 'Marek'],
 	},
 	{
 		'name': 'questions',
 		'display_name': "Questionnaire Only",
 		'num_demo_participants': 2,
-		'app_sequence': ['questions'],
+		'app_sequence': ['trust_game', 'Lukas', 'Marek', 'questions'],
 	},
+	{
+		'name': 'instructiontest',
+		'display_name': "Ultimatum",
+		'num_demo_participants': 2,
+		'app_sequence': ['Lukas'],
+	}
 ]
 
 

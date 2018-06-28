@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Ergebnisse und Auszahlung
+{% endblock %}
+
+{% block content %}
+<p><span style="text-decoration: underline;">Ergebnisse des zweiten Experiments:</span></p>
+Bei der <strong>zweiten</strong> Entscheidung wurde vom Computer ein Preis von <strong>{{player.BDM_eco_price}}€</strong> festgelegt. Zu diesem Preis würden Sie die Schokolade <strong>{{player.BDM_eco_buy}}</strong>. </p>
+
+Bei der <strong>dritten</strong> Entscheidung wurde vom Computer ein Preis von <strong>{{player.BDM_conventional_price}}€</strong> festgelegt. Zu diesem Preis würden Sie die Schokolade <strong>{{player.BDM_conventional_buy}}</strong>. </p>
+
+Für Ihre Auszahlung ist die <strong>{{player.relevant_decision}}</strong> Entscheidung relevant. Also erhalten Sie <strong>{{player.chocolate}}</strong> Schokolade und einen Geldbetrag von <strong>{{player.payment}}€</strong>. </p>
+
+<p>&nbsp;</p>
+
+Bitte warten Sie an Ihrem Platz, bis die Nummer Ihres Computers aufgerufen wird; Sie erhalten dann die Auszahlungen aller drei Experimente. </p>
+
+Vielen Dank für die Teilnahme an unseren Experimenten. Wir wünschen Ihnen noch einen schönen Tag.
+
+
+{% endblock %}
+
+

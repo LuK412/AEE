@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block title %}
+    Zusätzliche Fragen
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.experience %}
+    {% formfield player.played %}
+
+    {% next_button%}
+
+{% endblock %}

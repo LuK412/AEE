@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Herzlich Willkommen zum dritten Experiment
+{% endblock %}
+
+{% block content %}
+Im folgenden Experiment möchten wir Sie bitten, drei Entscheidungen zu treffen. Ihre Auszahlung hängt von Ihren Entscheidungen und einer Zufallsauswahl des Computers ab, nicht von den Entscheidungen der anderen Teilnehmer. </p>
+Sie haben eine Anfangsausstattung von {{Constants.endowment}}€. </p>
+Sie können in dem Experiment sowohl Schokolade als auch Geld verdienen. Für Ihre Auszahlung wird nur eine der drei Entscheidungen relevant sein. Welche das ist, wird zufällig vom Computer bestimmt. </p>
+Alle Entscheidungen die Sie treffen sind anonym.
+    {% next_button %}
+
+
+
+{% endblock %}

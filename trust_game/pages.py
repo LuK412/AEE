@@ -7,6 +7,10 @@ class Welcome(Page):
 
 	pass
 
+class Experiment_1(Page):
+
+	pass
+
 
 class Questions(Page):
 
@@ -75,6 +79,7 @@ class Results(Page):
 
 page_sequence = [
 	Welcome,
+	Experiment_1,
 	Questions,
 	WaitForGroup,
 	Agree,

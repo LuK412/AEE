@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Ergebnis
+{% endblock %}
+
+{% block content %}
+    <p>
+        {% if player.id_in_group == 1 %}
+            Ihnen wurde durch Zufall die Rolle des Anbieters zugeteilt.
+            Das zufällig generierte Angebot beträgt {{ group.amount_offered }}
+            von insgesamt {{ Constants.endowment }}.
+            {% if group.offer_accepted %}
+                Das Angebot wurde angenommen.
+            {% else %}
+                 Das Angebot wurde abgelehnt.
+            {% endif %}
+        {% else %}
+            Ihnen wurde durch Zufall die Rolle des Responders zugeteilt.
+            Das Angebot beträgt {{ group.amount_offered }} von insgesamt {{ Constants.endowment }}.
+            {% if group.offer_accepted %}
+                Sie akzeptierten das Angebot.
+            {% else %}
+                Sie lehnten das Angebot ab.
+            {% endif %}
+        {% endif %}
+    </p>
+
+    <p>
+        Ihre Auszahlung ist {{ player.payoff }}.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

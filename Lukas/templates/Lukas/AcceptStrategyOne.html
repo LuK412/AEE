@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+        Strategie als Responder
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Durch Zufall wird entschieden, ob Sie Anbieter oder Responder sind.
+        Angenommen Sie sind der <strong>Responder</strong>.
+    </p>
+
+    <p>
+        Sie erhalten einen Anteil der {{ Constants.endowment }} als Angebot.
+        Dieses Angebot können Sie nun entweder annehmen oder ablehnen.
+        Sie entscheiden, wann und ob Sie die Aufteilung akzeptieren.
+    </p>
+
+    {% for field in form %}
+        {% formfield field %}
+    {% endfor %}
+
+    {% next_button %}
+
+{% endblock %}

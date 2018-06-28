@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Entscheidung 3
+{% endblock %}
+
+{% block content %}
+Hier können Sie angeben, welches der höchste Betrag ist, den Sie bereit wären für konventionell produzierte Schokolade zu bezahlen. Der Computer bestimmt zufällig einen Preis zwischen 0€ und 2€. Ist der Betrag den Sie angegeben haben höher als dieser Preis, so werden Sie die Schokolade kaufen. Ihre Auszahlung ist dann zum einen Ihre Anfangsausstattung (4€) minus den Preis für die Schokolade. Zum anderen bekommen Sie die Schokolade. </p>
+
+Ist der Betrag den Sie angegeben haben niedriger als der vom Computer generierte Preis, so werden Sie die Schokolade nicht kaufen und Sie behalten Ihre Anfangsausstattung.</p>
+
+{% formfield player.BDM_conventional_WTP %}
+
+Den Preis, den der Computer bestimmt hat, werden Sie am Ende dieses Experiments erfahren.</p>
+
+    {% next_button %}
+
+{% endblock %}

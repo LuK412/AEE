@@ -1,0 +1,65 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Experiment 2 - Anleitung
+{% endblock %}
+
+{% block content %}
+    <p><strong>Das Experiment</strong></p>
+
+    <p>
+    In diesem Experiment werden Sie eine Version des Ultimatumspiels mit einem anderem Teilnehmer, ihrem Mitspieler spielen.
+    Dieser Mitspieler wird ihnen zufällig zugeteilt.
+    Sie werden die Identität Ihres Mitspielers nicht erfahren und auch Ihr Mitspieler wird Ihre Identität nicht erfahren.
+    </p>
+
+    <p>
+    Einer von Ihnen wird die Rolle des Anbieters übernehmen, der andere Spieler entsprechend
+    die Rolle des Responders.
+    </p>
+
+    <p>
+    Sie und Ihr Mitspieler erhalten zu Beginn eine Ausstattung von {{ Constants.endowment }}.
+    In diesem Experiment geht es darum diese {{ Constants.endowment }} aufzuteilen.
+    Der Responder erhält ein Angebot und entscheidet das Angebot anzunehmen oder abzulehnen. Dies wird im Abschnitt "Genauer Ablauf" genauer erklärt.
+    Wird das Angebot angenommen, erhalten beide Spieler Ihre jeweilige Auszahlung.
+    Wird das Angebot abgelehnt, erhalten beide Null Punkte
+    </p>
+
+    <p>
+    Es gibt 11 Möglichkeiten die {{ Constants.endowment }} zwischen den beiden Spielern aufzuteilen:
+        <p>0 für den Anbieter und 10 für den Responder</p>
+        <p>1 für den Anbieter und 9 für den Responder</p>
+        <p>2 für den Anbieter und 8 für den Responder</p>
+        <p>3 für den Anbieter und 7 für den Responder</p>
+        <p>4 für den Anbieter und 6 für den Responder</p>
+        <p>5 für den Anbieter und 5 für den Responder</p>
+        <p>6 für den Anbieter und 4 für den Responder</p>
+        <p>7 für den Anbieter und 3 für den Responder</p>
+        <p>8 für den Anbieter und 2 für den Responder</p>
+        <p>9 für den Anbieter und 1 für den Responder</p>
+        <p>10 für den Anbieter und 0 für den Responder</p>
+    </p>
+
+    <p><strong>Genauer Ablauf</strong></p>
+
+    <p>
+    Sie werden aus einer Liste auswählen, welche der oben genannten Aufteilungen Sie als Responder akzeptieren
+    würden und welche nicht. Nachdem Sie eine Auswahl getroffen haben, wird durch Zufall entschieden, welchem Spieler welche Rolle zugeteilt wird.
+    Wird ihnen die Rolle des Responders zugeteilt, erhalten Sie dann ein Angebot, welches durch Ihre vorherige Auswahl entweder angenommen oder abgelehnt wird.
+    </p>
+
+    <p>
+    In der Rolle des Anbieters entscheiden Sie allerdings nicht über die Aufteilung. Diese wird zufällig bestimmt.
+    Das Angebot an den Responder wird eine zufällige Zahl zwischen 0 und 10 betragen. Jede Zahl hat die gleiche Wahrscheinlichkeit
+    aufzutreten, also eine Wahrscheinlichkeit von ungefähr neun Prozent.
+    </p>
+
+    <p>
+    Am Ende des Spiels werden Sie Ihre Auszahlung angezeigt bekommen. Wurde das Angebot angenommen, erhalten beide Spieler
+    ihre jeweiligen Auszahlungen. Wurde das Angebot abgelehnt erhalten beide Spieler eine Auszahlung von Null Punkten.
+    </p>
+    {% next_button %}
+
+{% endblock %}
